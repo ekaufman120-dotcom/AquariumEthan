@@ -1,15 +1,15 @@
-public class Fish extends SeaCreature {
+public class Shark extends SeaCreature {
 
     private String symbol;
 
-    public Fish(String name, int position, int speed, int direction, String symbol) {
+    public Shark(String name, int position, int speed, int direction, String symbol) {
         super(name, position, speed, direction);
         this.symbol = symbol;
     }
 
     @Override
     public void move(int tankWidth) {
-        position += speed * direction;
+        position += speed * direction * 2;
         keepInsideTank(tankWidth);
     }
 

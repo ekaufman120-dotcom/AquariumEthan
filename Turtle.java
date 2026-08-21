@@ -1,16 +1,26 @@
-public class Fish extends SeaCreature {
+public class Turtle extends SeaCreature {
 
     private String symbol;
+    private boolean movedLast;
 
-    public Fish(String name, int position, int speed, int direction, String symbol) {
+    public Turtle(String name, int position, int speed, int direction, String symbol) {
         super(name, position, speed, direction);
         this.symbol = symbol;
+        movedLast = false;
     }
 
     @Override
     public void move(int tankWidth) {
-        position += speed * direction;
-        keepInsideTank(tankWidth);
+        if(movedLast)
+        {
+            movedLast = false;
+        }
+        else
+        {
+            position += speed * direction;
+            keepInsideTank(tankWidth);
+            movedLast = true;
+        }
     }
 
     @Override

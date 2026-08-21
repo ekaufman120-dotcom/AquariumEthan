@@ -62,6 +62,7 @@ public abstract class SeaCreature {
 
     public String getDirectionWord() {
         return direction >= 0 ? "right" : "left";
+        //if? direction >= 0 then: right, else: left
     }
 
     @Override

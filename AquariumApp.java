@@ -9,6 +9,8 @@ public class AquariumApp {
         // Two starter creatures.
         tank[0] = new Fish("Nemo", 4, 3, 1, "><>");
         tank[1] = new Fish("Dory", 30, 2, -1, "><((('>");
+        tank[2] = new Shark("Tod", 14, 1, -1, "<('-')>");
+        tank[3] = new Turtle("Speedster", 7, 4, -1, "<(^v^v^v)' )");
 
         // =====================================================
         // STUDENT TODO
@@ -55,7 +57,9 @@ public class AquariumApp {
                     break;
 
                 default:
-                    System.out.println("Please choose 1, 2, 3, or 4.");
+                    aquarium.advanceTurn();
+                    aquarium.display();
+                    break;
             }
         }
 
