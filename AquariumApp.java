@@ -11,7 +11,7 @@ public class AquariumApp {
         tank[1] = new Fish("Dory", 30, 2, -1, "><((('>");
         tank[2] = new Shark("Tod", 14, 1, -1, "<('-')>");
         tank[3] = new Turtle("Speedster", 7, 4, -1, "<(^v^v^v)' )");
-
+        tank[4] = new Prop("Rocky", 15, "/\\");
         // =====================================================
         // STUDENT TODO
         // =====================================================
