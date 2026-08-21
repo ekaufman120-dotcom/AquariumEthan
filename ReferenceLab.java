@@ -18,7 +18,8 @@ public class ReferenceLab {
         System.out.println("nemo position: " + nemo.getPosition());
         System.out.println("copy position: " + copy.getPosition());
 
-
+        //  It will read 25 because copy refers to the same place in memory as nemo.
+        
         // ==================================================
         // EXPERIMENT B: TWO DIFFERENT OBJECTS
         // ==================================================
@@ -33,6 +34,7 @@ public class ReferenceLab {
         System.out.println("Experiment B - Separate Objects");
         System.out.println("fish1 == fish2: " + (fish1 == fish2));
 
+        // It will print "false" because despite being identical, they are at two different locations in memory.
 
         // ==================================================
         // EXPERIMENT C: ARRAY REFERENCES
@@ -52,5 +54,9 @@ public class ReferenceLab {
         System.out.println("Experiment C - Array References");
         System.out.println("selected position: " + selected.getPosition());
         System.out.println("tank[0] position: " + tank[0].getPosition());
+
+        // They will both print 35, as once again they refer to the same place in memory.
+
+        System.out.println("I am adding stuff to this so github considers it a change and I can push it.");
     }
 }
