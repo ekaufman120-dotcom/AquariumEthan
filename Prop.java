@@ -9,15 +9,16 @@ public class Prop extends SeaCreature {
 
     @Override
     public void move(int tankWidth) {
-        position += speed * direction;
+        position += 0;
         keepInsideTank(tankWidth);
     }
 
     @Override
     public String getSymbol() {
-        return direction >= 0 ? symbol : reverseSymbol(symbol);
+        return /*direction >= 0 ? symbol : reverseSymbol(symbol)*/ symbol;
     }
-
+    
+    /*
     private String reverseSymbol(String text) {
         String temp = new StringBuilder(text).reverse().toString();
         String result = "";
@@ -36,4 +37,5 @@ public class Prop extends SeaCreature {
         }
         return result;
     }
+    */
 }

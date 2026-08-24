@@ -11,7 +11,8 @@ public class AquariumApp {
         tank[1] = new Fish("Dory", 30, 2, -1, "><((('>");
         tank[2] = new Shark("Tod", 14, 1, -1, "<('-')>");
         tank[3] = new Turtle("Speedster", 7, 4, -1, "<(^v^v^v)' )");
-        tank[4] = new Prop("Rocky", 15, "/\\");
+        tank[4] = new Prop("Bubbles", 15, "o.*   .*o");
+        tank[5] = new AnimatedProp("Grassy", 2, " //", "\\\\ ");
         // =====================================================
         // STUDENT TODO
         // =====================================================
@@ -53,7 +54,19 @@ public class AquariumApp {
 
                 case "4":
                     running = false;
-                    System.out.println("Aquarium closed. Goodbye!");
+                    System.out.println("Self destruct sequence initiated.");
+                    try {
+                        Thread.sleep(1000);
+                        System.out.println("3...");
+                        Thread.sleep(1000);
+                        System.out.println("2...");
+                        Thread.sleep(1000);
+                        System.out.println("1...");
+                        Thread.sleep(1000);
+                        System.out.println("Goodbye!");
+                    } catch (InterruptedException e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
 
                 default:
