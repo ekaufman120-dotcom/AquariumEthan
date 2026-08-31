@@ -2,7 +2,7 @@ public class Prop extends SeaCreature {
 
     private String symbol;
 
-    public Prop(String name, int position, String symbol) {
+    public Prop(String name, int position, String symbol) throws InvalidCreatureException  {
         super(name, position, 0, 1);
         this.symbol = symbol;
     }

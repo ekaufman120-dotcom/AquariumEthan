@@ -4,7 +4,7 @@ public class AnimatedProp extends Prop {
     private String symbol2;
     private int animationFrame;
 
-    public AnimatedProp(String name, int position, String symbol1, String symbol2) {
+    public AnimatedProp(String name, int position, String symbol1, String symbol2) throws InvalidCreatureException {
         super(name, position, "If you're seeing this, an error has occured in AnimatedProp.java.");
         this.symbol1 = symbol1;
         this.symbol2 = symbol2;

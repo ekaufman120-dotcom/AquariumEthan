@@ -2,8 +2,11 @@ public class Shark extends SeaCreature {
 
     private String symbol;
 
-    public Shark(String name, int position, int speed, int direction, String symbol) {
+    public Shark(String name, int position, int speed, int direction, String symbol) throws InvalidCreatureException  {
         super(name, position, speed, direction);
+        if (symbol == null || symbol.equals("")) {
+            throw new InvalidCreatureException("Error: Shark is invisible.");
+        }
         this.symbol = symbol;
     }
 

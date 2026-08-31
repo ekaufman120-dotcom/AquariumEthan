@@ -5,10 +5,21 @@ public abstract class SeaCreature {
     protected int speed;
     protected int direction;
 
-    public SeaCreature(String name, int position, int speed, int direction) {
+    public SeaCreature(String name, int position, int speed, int direction) throws InvalidCreatureException {
+        
+        if(name == null || name.equals("")) {
+            throw new InvalidCreatureException("Name cannot be null or empty");
+        }
         this.name = name;
+        
+        if(position < 0) {
+            throw new InvalidCreatureException("Position cannot be negative");
+        }
         this.position = position;
         this.speed = speed;
+        if(direction != 1 && direction != -1) {
+            throw new InvalidCreatureException("Direction must be either 1 (right) or -1 (left)");
+        }
         this.direction = direction;
     }
 

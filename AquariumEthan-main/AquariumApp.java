@@ -7,14 +7,18 @@ public class AquariumApp {
         SeaCreature[] tank = new SeaCreature[8];
 
         // Two starter creatures.
-        tank[0] = new Fish("Nemo", 4, 3, 1, "><>");
-        tank[1] = new Fish("Dory", 30, 2, -1, "><((('>");
-        tank[2] = new Shark("Tod", 14, 1, -1, "<('-')>");
-        tank[3] = new Turtle("Speedster", 7, 4, -1, "<(^v^v^v)' )");
-        tank[4] = new Prop("Bubbles", 15, "o.*   .*o");
-        tank[5] = new AnimatedProp("Grassy", 2, " //", "\\\\ ");
+        try {
+            tank[0] = new Fish("Nemo", 4, 3, 1, "><>");
+            tank[1] = new Fish("Dory", 30, 2, -1, "><((('>");
+            tank[2] = new Shark("Tod", 14, 1, -1, "<('-')>");
+            tank[3] = new Turtle("Speedster", 7, 4, -1, "<(^v^v^v)' )");
+            tank[4] = new Prop("Bubbles", 15, "o.*   .*o");
+            tank[5] = new AnimatedProp("Grassy", 2, " //", "\\\\ ");
+        } catch (InvalidCreatureException e) {
+            System.out.println("An error has occured while creating a creature.\n" + e.getMessage());
+        }
         // =====================================================
-        // STUDENT TODO
+        // STUDENT TO DO
         // =====================================================
         // 1. Create at least TWO additional SeaCreature subclasses.
         // 2. Add objects from those subclasses to this array.
