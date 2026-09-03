@@ -23,7 +23,7 @@ public class AquariumApp {
         try {
             File file = creaturesFile();
             Scanner scanner = new Scanner(file);
-            scanner.useDelimiter("\\s*,\\s*|\\r?\\n");
+            scanner.useDelimiter(", ?|\\r?\\n");
             tank = new SeaCreature[scanner.nextInt()];
             for(int i = 0; i < tank.length; i++){
                 String animalType = scanner.next();
