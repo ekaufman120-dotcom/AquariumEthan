@@ -1,20 +1,63 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class AquariumApp {
 
     public static void main(String[] args) {
 
-        SeaCreature[] tank = new SeaCreature[8];
-
+        SeaCreature[] tank;
+        
         // Two starter creatures.
         try {
+            File file = creaturesFile();
+            Scanner scanner = new Scanner(file);
+            tank = new SeaCreature[scanner.nextInt()];
+            scanner.close();
+        }
+        catch (FileNotFoundException e) {
+            tank = new SeaCreature[6];
+            System.out.println("An error has occured while reading the creatures file.\n" + e.getMessage());
+            return;
+        }
+        try {
+            File file = creaturesFile();
+            Scanner scanner = new Scanner(file);
+            scanner.useDelimiter("\\s*,\\s*|\\r?\\n");
+            tank = new SeaCreature[scanner.nextInt()];
+            for(int i = 0; i < tank.length; i++){
+                String animalType = scanner.next();
+                if(animalType.equals("Fish")){
+                    tank[i] = new Fish(scanner.next(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.next());
+                }
+                else if(animalType.equals("Shark")){
+                    tank[i] = new Shark(scanner.next(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.next());
+                }
+                else if(animalType.equals("Turtle")){
+                    tank[i] = new Turtle(scanner.next(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.next());
+                }
+                else if(animalType.equals("Prop")){
+                    tank[i] = new Prop(scanner.next(), scanner.nextInt(), scanner.next());
+                }
+                else if(animalType.equals("AnimatedProp")){
+                    tank[i] = new AnimatedProp(scanner.next(), scanner.nextInt(), scanner.next(), scanner.next());
+                }
+            }
+            /*
             tank[0] = new Fish("Nemo", 4, 3, 1, "><>");
             tank[1] = new Fish("Dory", 30, 2, -1, "><((('>");
             tank[2] = new Shark("Tod", 14, 1, -1, "<('-')>");
             tank[3] = new Turtle("Speedster", 7, 4, -1, "<(^v^v^v)' )");
             tank[4] = new Prop("Bubbles", 15, "o.*   .*o");
-            tank[5] = new AnimatedProp("Grassy", 2, " //", "\\\\ ");
-        } catch (InvalidCreatureException e) {
+            tank[5] = new AnimatedProp("Grassy", 2, " //", "\\\\ "); */
+            scanner.close();
+
+        } 
+        catch (FileNotFoundException e) {
+            System.out.println("An error has occured while reading the creatures file.\n" + e.getMessage());
+            return;
+        }
+        catch (InvalidCreatureException e) {
             System.out.println("An error has occured while creating a creature.\n" + e.getMessage());
         }
         // =====================================================
@@ -89,5 +132,13 @@ public class AquariumApp {
         System.out.println("2. Advance One Turn");
         System.out.println("3. View Creature Details");
         System.out.println("4. Quit");
+    }
+
+    private static File creaturesFile() {
+        File file = new File("creatures.txt");
+        if (!file.exists()) {
+            file = new File("AquariumEthan-main/AquariumEthan-main/creatures.txt");
+        }
+        return file;
     }
 }
