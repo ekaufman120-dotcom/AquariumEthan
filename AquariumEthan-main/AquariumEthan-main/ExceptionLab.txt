@@ -1,0 +1,31 @@
+
+Test 1
+Invalid input: tank[6] = new Fish("",0,0,0,"");
+What should happen?
+    The code should flag that the fish has no name, and return that error message.
+What actually happened?
+    The code flagged that the fish had no name, and returned that error message.
+Did the program continue running?
+    Yes.
+
+
+Test 2
+Invalid input: tank[6] = new Shark("Sharki",-1,-1,-1,"*-*");
+What should happen?
+    The code should flag the negative position, and return its respective error message.
+What actually happened?
+    The code flagged the negative position, and returned the correct error message.
+Did the program continue running?
+    Yes.
+
+
+Test 3
+Invalid input: tank[6] = new Prop("Rocky", 5, "");
+What should happen?
+    The program should flag the null symbol and print its respective error message.
+What actually happened?
+    The program flagged no errors and continued as normal.
+Did the program continue running?
+    Yes.
+Sidenote: I now realize this was an intentional feature I added so I could make gaps in between the fish if I wanted. Essentially,
+    "it's not a bug, it's a feature".
