@@ -103,16 +103,16 @@ public class AquariumApp {
                     running = false;
                     System.out.println("Self destruct sequence initiated.");
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(1500);
                         System.out.println("3...");
                         printExplosionMessage(tank);
-                        Thread.sleep(1000);
+                        Thread.sleep(1500);
                         System.out.println("2...");
                         printExplosionMessage(tank);
-                        Thread.sleep(1000);
+                        Thread.sleep(1500);
                         System.out.println("1...");
                         printExplosionMessage(tank);
-                        Thread.sleep(1000);
+                        Thread.sleep(1500);
                         File file2 = new File("explosionImage.txt");
                         Scanner scanner = new Scanner(file2);
                         while (scanner.hasNextLine()) {
