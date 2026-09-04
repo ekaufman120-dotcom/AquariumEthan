@@ -100,30 +100,35 @@ public class AquariumApp {
                     break;
 
                 case "4":
-                    running = false;
-                    System.out.println("Self destruct sequence initiated.");
-                    try {
-                        Thread.sleep(1500);
-                        System.out.println("3...");
-                        printExplosionMessage(tank);
-                        Thread.sleep(1500);
-                        System.out.println("2...");
-                        printExplosionMessage(tank);
-                        Thread.sleep(1500);
-                        System.out.println("1...");
-                        printExplosionMessage(tank);
-                        Thread.sleep(1500);
-                        File file2 = new File("explosionImage.txt");
-                        Scanner scanner = new Scanner(file2);
-                        while (scanner.hasNextLine()) {
-                            System.out.println(scanner.nextLine());
-                        }
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.print("Are you sure you want to quit? (y/n): ");
+                    if(scanner.nextLine().trim().equalsIgnoreCase("y")) {
                         scanner.close();
-                    } catch (Exception e) {
-                        System.out.println("Error: " + e.getMessage());
+                        running = false;
+                        System.out.println("Self destruct sequence initiated.");
+                        try {
+                            Thread.sleep(1500);
+                            System.out.println("3...");
+                            printExplosionMessage(tank);
+                            Thread.sleep(1500);
+                            System.out.println("2...");
+                            printExplosionMessage(tank);
+                            Thread.sleep(1500);
+                            System.out.println("1...");
+                            printExplosionMessage(tank);
+                            Thread.sleep(1500);
+                            File file2 = new File("explosionImage.txt");
+                            Scanner scanner2= new Scanner(file2);
+                            while (scanner2.hasNextLine()) {
+                                System.out.println(scanner2.nextLine());
+                            }
+                            scanner2.close();
+                        }
+                        catch (Exception e) {
+                            System.out.println("Error: " + e.getMessage());
+                        } 
                     }
                     break;
-
                 default:
                     aquarium.advanceTurn();
                     aquarium.display();
