@@ -110,8 +110,13 @@ public class AquariumApp {
                         Thread.sleep(1000);
                         System.out.println("1...");
                         Thread.sleep(1000);
-                        System.out.println("Goodbye!");
-                    } catch (InterruptedException e) {
+                        File file2 = new File("explosionImage.txt");
+                        Scanner scanner = new Scanner(file2);
+                        while (scanner.hasNextLine()) {
+                            System.out.println(scanner.nextLine());
+                        }
+                        scanner.close();
+                    } catch (Exception e) {
                         System.out.println("Error: " + e.getMessage());
                     }
                     break;
