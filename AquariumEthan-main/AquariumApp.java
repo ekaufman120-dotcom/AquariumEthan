@@ -105,10 +105,13 @@ public class AquariumApp {
                     try {
                         Thread.sleep(1000);
                         System.out.println("3...");
+                        printExplosionMessage(tank);
                         Thread.sleep(1000);
                         System.out.println("2...");
+                        printExplosionMessage(tank);
                         Thread.sleep(1000);
                         System.out.println("1...");
+                        printExplosionMessage(tank);
                         Thread.sleep(1000);
                         File file2 = new File("explosionImage.txt");
                         Scanner scanner = new Scanner(file2);
@@ -145,5 +148,27 @@ public class AquariumApp {
             file = new File("AquariumEthan-main/AquariumEthan-main/creatures.txt");
         }
         return file;
+    }
+
+    private static void printExplosionMessage(SeaCreature[] tank)
+    {
+        int fishName = (int) (Math.random() * tank.length);
+        int messageIndex = (int) (Math.random() * 7);
+        if (messageIndex == 0)
+            System.out.println(tank[fishName].getName() + ": What have you done!?");
+        else if (messageIndex == 1)
+            System.out.println(tank[fishName].getName() + ": This is all your fault.");
+        else if (messageIndex == 2)
+            System.out.println(tank[fishName].getName() + ": ...what? Do you expect me to say something? I'm a fish.");
+        else if (messageIndex == 3) 
+            System.out.println(tank[fishName].getName() + ": Why is the water so hot?");
+        else if (messageIndex == 4)
+            System.out.println(tank[fishName].getName() + ": What is that fizzing?");
+        else if (messageIndex == 5)
+            System.out.println(tank[fishName].getName() + ": Not again...");
+        else if (messageIndex == 6)
+            System.out.println(tank[fishName].getName() + ": hehehe... kaboom");
+        else
+            System.out.println(tank[fishName].getName() + ": blub...");
     }
 }
