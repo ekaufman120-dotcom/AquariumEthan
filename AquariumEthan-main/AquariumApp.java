@@ -117,7 +117,7 @@ public class AquariumApp {
                             System.out.println("1...");
                             printExplosionMessage(tank);
                             Thread.sleep(1500);
-                            File file2 = new File("explosionImage.txt");
+                            File file2 = new File("AquariumEthan-main/explosionImage.txt");
                             Scanner scanner2= new Scanner(file2);
                             while (scanner2.hasNextLine()) {
                                 System.out.println(scanner2.nextLine());
@@ -150,7 +150,7 @@ public class AquariumApp {
     private static File creaturesFile() {
         File file = new File("creatures.txt");
         if (!file.exists()) {
-            file = new File("AquariumEthan-main/AquariumEthan-main/creatures.txt");
+            file = new File("AquariumEthan-main/creatures.txt");
         }
         return file;
     }
